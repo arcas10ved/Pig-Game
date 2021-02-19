@@ -175,11 +175,23 @@ main {
   font-weight: 700;
   color: #c7365f;
 }
-.inputValue{
+/* .inputValue{
   position: absolute;
   height: 4rem; 
   font-size: 2rem;
   font-weight: 300;
   color:black;
 
+} */
+.inputValue{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:520px;
+  color: #555;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  width: 160px;
+  text-transform: uppercase;
 }
