@@ -8,6 +8,8 @@ document.querySelector('.btn--roll').addEventListener('click', function () {
   if (gamePlaying) {
     //1.Random number
     var dice = Math.floor(Math.random() * 6) + 1;
+    var dice2 = Math.floor(Math.random() * 6) + 1;
+
     if (dice === 6) {
       dice6 += dice;
     } else if (dice6 === 12) {
@@ -17,19 +19,22 @@ document.querySelector('.btn--roll').addEventListener('click', function () {
     }
 
 
-
+    console.log(dice, dice2)
 
 
     //2.Display the result
     var diceDOM = document.querySelector('.dice');
+    var diceDOM2 = document.querySelector(".dice2")
     diceDOM.style.display = 'block';
-    diceDOM.src = 'dice-' + dice + '.png'; //add's src dice photo according to random dice value
+    diceDOM2.style.display = 'block';
+    diceDOM.src = 'dice-' + dice + '.png';
+    diceDOM2.src = 'dice-' + dice2 + '.png'; //add's src dice photo according to random dice value
     //3.Update the round score If the rolled number was NOT a 1
 
-    if (dice !== 1) {
+    if (dice !== 1 && dice2 !== 1) {
       //Add score   
-      console.log(dice, dice6)
-      roundScore += dice; //current score keeps adding up until it hits 1 to the ·current of the current player
+      roundScore += dice;
+      roundScore += dice2; //current score keeps adding up until it hits 1 to the ·current of the current player
       document.querySelector('#current--' + activePlayer).textContent = roundScore;
     } else {
       nextPlayer();
@@ -50,6 +55,7 @@ document.querySelector('.btn--roll').addEventListener('click', function () {
       if (scores[activePlayer] >= document.getElementById("maxScoreInput").value) {
         document.querySelector("#name--" + activePlayer).textContent = "Winner!";
         document.querySelector(".dice").style.display = "none";
+        document.querySelector(".dice2").style.display = "none";
         gamePlaying = false;
         document.querySelector(".player--" + activePlayer).classList.add("player--winner")
         document.querySelector(".player--" + activePlayer).classList.remove("player--active")
@@ -61,10 +67,6 @@ document.querySelector('.btn--roll').addEventListener('click', function () {
       }
 
     }
-
-
-
-
   })
 });
 
@@ -80,6 +82,7 @@ function nextPlayer() {
   // document.querySelector(".player--1").classList.add("player--active");
 
   document.querySelector(".dice").style.display = "none";
+  document.querySelector(".dice2").style.display = "none";
 }
 // document.querySelector('#current--' + activePlayer).innerHTML = dice;
 
@@ -92,6 +95,7 @@ function init() {
   roundScore = 0;
   gamePlaying = true
   document.querySelector('.dice').style.display = 'none';
+  document.querySelector('.dice2').style.display = 'none';
 
   document.getElementById('score--0').textContent = 0;
   document.getElementById('score--1').textContent = 0;
