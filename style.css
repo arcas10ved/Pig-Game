@@ -150,12 +150,22 @@ main {
 
 .dice {
   position: absolute;
-  left: 50%;
+  left: 44%;
   top: 16.5rem;
   transform: translateX(-50%);
   height: 10rem;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
 }
+.dice2{
+  position: absolute;
+  left: 56%;
+  top: 16.5rem;
+  transform: translateX(-50%);
+  height: 10rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+
 
 .player--winner {
   background-color: #2f2f2f;
@@ -166,6 +176,10 @@ main {
   color: #c7365f;
 }
 .inputValue{
-height: 4rem;
+  position: absolute;
+  height: 4rem; 
+  font-size: 2rem;
+  font-weight: 300;
+  color:black;
 
 }
