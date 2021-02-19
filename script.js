@@ -47,7 +47,7 @@ document.querySelector('.btn--roll').addEventListener('click', function () {
 
       //Check if player won the game
 
-      if (scores[activePlayer] >= 100) {
+      if (scores[activePlayer] >= document.getElementById("maxScoreInput").value) {
         document.querySelector("#name--" + activePlayer).textContent = "Winner!";
         document.querySelector(".dice").style.display = "none";
         gamePlaying = false;
